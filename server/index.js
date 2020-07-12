@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/api/getcors', function(req, res) {
 	res.setHeader('serve-header','from->express');
+	res.setHeader('Set-Cookie', 'cookie-value=22;domain=.test.djtest.cn;path=/');
   res.send({ cors: 'cors-get请求' });
 });
 
