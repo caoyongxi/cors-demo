@@ -13,7 +13,7 @@
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "server": "nodemon server",
+    "server": "nodemon --inspect-brk server",
     "client": "nodemon client"
   }
 }
