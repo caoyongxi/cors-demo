@@ -14,3 +14,8 @@ $ npm run server
 $ npm run client
 
 ```
+
+## 调试server端代码
+1、在浏览器中输入： chrome://inspect/#devices  
+2、点击 Open dedicated DevTools for Node
+
