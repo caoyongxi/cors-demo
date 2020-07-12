@@ -2,8 +2,8 @@
 
 ## 运行项目
 
-首先为了方便测试，配置一下你的host指向，
-    你本机的ip地址  huoyun-test.djtest.cn
+首先为了方便测试，配置一下你的host指向:  
+    你本机的ip地址  huoyun-test.djtest.cn  
     你本机的ip地址  test.djtest.cn
 
 ```bash
