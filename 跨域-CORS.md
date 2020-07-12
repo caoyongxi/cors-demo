@@ -1,10 +1,10 @@
 # 跨域-CORS
 
-> 对前端来说跨域应该是不陌生的，解决跨域的方案有很多种。而我司采用的请求方式则是通过CORS的方式，所以难免在调接口的时候会遇见一些跨域的问题，下面通过一个简单的demo验证一下CORS解决跨域的过程中对一些知识点做一个简单的总结，如果你之后的工作中有遇到CORS相关的问题时可以通过这个demo来改写相关的配置进行验证，找到问题的所在
+> 对前端来说跨域应该是不陌生的，解决跨域的方案有很多种。而我司接口调用采用的正是CORS的方式，所以难免在调接口的时候会遇见一些跨域的问题，下面通过一个简单的demo验证一下CORS解决跨域的过程中对一些不清楚的知识点做一个简单的总结，如果你之后的工作中有遇到CORS相关的问题时可以通过这个demo来改写相关的配置进行验证，找到问题的所在
 
-示例demo已经放在[GitHub](https://github.com/wuba/wwto)
+示例demo已经放在[GitHub](https://github.com/wuba/wwto) 上
 
-demo目录如下： client目录作为客户端、server目录作为处理CORS的服务端，分别把两端的代码跑起来，就可以进行CORS相关配置的学习了！
+demo目录结构如下： client目录作为客户端、server目录作为处理CORS的服务端，分别把两端的代码跑起来，就可以进行CORS相关配置的学习了
 ![](https://user-gold-cdn.xitu.io/2020/7/12/1734146bcf50081a?w=1460&h=873&f=png&s=54531) 
 
 对CORS的了解可以先看下一下阮老师的这两篇文章:   
@@ -101,7 +101,7 @@ res.setHeader('Set-Cookie', 'cookie-value=22;domain=.test.djtest.cn;path=/');
 
 即：页面`huoyun-test.djtest.cn`不可以操作`test.djtest.cn`的cookie，通过document.cookie读取的时候是可以获取到从一级域名`djtest.cn` 及以下的所有子域的cookie值，而在面板中是**看不见**服务端设置的`cookie-value=22;domain=.test.djtest.cn;path=/`的值，说这里注意下！！！
 
-那此时再次请求接口`api/getcors`，服务端接受到的cookie值以哪个为准呢 ？ 如下：
+那此时再请求接口`api/getcors`，服务端接受到的cookie值以哪个为准呢 ？ 如下：
 ![](https://user-gold-cdn.xitu.io/2020/7/12/1734258febdec3c4?w=1209&h=540&f=png&s=30856) 
 
 即：最终解析到的cookie会以client端**一级域名**设置的值`Cookies.set('cookie-value', '3', { domain: 'djtest.cn' });` 为准  
